@@ -31,6 +31,22 @@ namespace Assignment5.DAL
                 new Department() { DepartmentName = "CS", ManagerID = 1, Budget = 150000000 },
                 new Department() { DepartmentName = "EE", ManagerID = 4, Budget = 135000000 }
             };
+            foreach (Department department in departments)
+            {
+                context.Departments.Add(department);
+            }
+            context.SaveChanges();
+
+            //children data
+            var children = new List<Child>
+            {
+                new Child() { Name = "AA", Age = 10, ParentID = 1 }
+            };
+            foreach (Child child in children)
+            {
+                context.Children.Add(child);
+            }
+            context.SaveChanges();
         }
     }
 }
